@@ -1,15 +1,21 @@
-<%= form_with(model: @post, local: true) do |f| %>
-  <form>
-  <div class="field">
-    <%= f.label :image, "投稿する画像" %><br />
-    <%= f.file_field :image %>
+
+<div class="container-fluid">
+  <div class="errors">
+  <%= render 'shared/error_messages', model: @post %>
   </div>
-  <div class="field">
-    <%= f.label :text, "テキスト" %><br />
-    <%= f.text_area :text %>
-  </div>
-  <div class="actions">
-    <%= f.submit "投稿する", class: :form__btn  %>
-  </div>
-</form>
-<% end %>
+  <%= form_with(model: @post, local: true) do |f| %>
+    <form>
+    <div class="field">
+      <%= f.label :image, "投稿する画像" %><br />
+      <%= f.file_field :image %>
+    </div>
+    <div class="field">
+      <%= f.label :text, "テキスト" %><br />
+      <%= f.text_area :text %>
+    </div>
+    <div class="actions">
+      <%= f.submit "投稿する", class: :form__btn  %>
+    </div>
+  </form>
+  <% end %>
+</div>

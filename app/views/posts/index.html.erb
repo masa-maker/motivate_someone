@@ -1,11 +1,15 @@
-<div class="container-fluid d-frex justify-content-around">
+<div class="container-fluid">
   <% @posts.each do |post| %>
     <ul class="cards">
       <li>
-        <div class="card" style="width: 20rem;">
-          <%= image_tag post.image.variant(resize: '300x500')%>
+        <div class="card">
+          <div class="image-box">
+            <%= image_tag post.image.variant(resize: '300x400')%>
+          </div>
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
+            <%= link_to '編集', "#", class:"btn btn-dark" %>
+            <%= link_to '削除', "#", class:"btn btn-dark" %>
             <p class="card-text"><%= post.text%></p>
             <a href="#" class="btn btn-primary">いいね</a>
           </div>
